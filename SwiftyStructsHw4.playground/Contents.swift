@@ -199,7 +199,7 @@ struct Song {
     var genre: Genre
     lazy var publisher: String? = nil // some songs have publisher and some dont so variable is optional
     var description: String {
-        return "\(title), by \(artist) (\(duration) seconds), \(genre) genre."
+        return "\(title), by \(artist) (\(duration) seconds), \(genre) genre"
     }
 }
 
@@ -240,18 +240,30 @@ let playlist: [Song] = [
 
 print("Rock Songs:")
 let rockSongs = filterSongsByGenre(from: playlist, by: .rock)
-for song in rockSongs {
-    print(song.description)
+for var song in rockSongs {
+    if let publisher = song.publisher {
+        print("\(song.description), published by \(publisher)")
+    } else {
+        print(song.description)
+    }
 }
 print("blues Songs:")
 let bluesSongs = filterSongsByGenre(from: playlist, by: .blues)
-for song in bluesSongs {
-    print(song.description)
+for var song in bluesSongs {
+    if let publisher = song.publisher {
+        print("\(song.description), published by \(publisher)")
+    } else {
+        print(song.description)
+    }
 }
 print("Electronic Songs:")
 let electronicSongs = filterSongsByGenre(from: playlist, by: .electronic)
-for song in electronicSongs {
-    print(song.description)
+for var song in electronicSongs {
+    if let publisher = song.publisher {
+        print("\(song.description), published by \(publisher)")
+    } else {
+        print(song.description)
+    }
 }
 
 print("------------------------------------------------")
