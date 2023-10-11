@@ -24,7 +24,7 @@ protocol Superhero {
 
 extension Superhero {
     func printSuperheroInfo() {
-        print("🚀")
+        print("🚀 🕷️")
          print("Superhero Name: \(name)")
          print("Superhero Alias: \(alias)")
          print("Is Evil: \(isEvil ? "Yes" : "No")")
