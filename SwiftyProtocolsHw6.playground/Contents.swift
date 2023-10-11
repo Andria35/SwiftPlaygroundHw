@@ -24,6 +24,7 @@ protocol Superhero {
 
 extension Superhero {
     func printSuperheroInfo() {
+        print("🚀")
          print("Superhero Name: \(name)")
          print("Superhero Alias: \(alias)")
          print("Is Evil: \(isEvil ? "Yes" : "No")")
@@ -87,7 +88,7 @@ class SuperheroSquad {
     }
     func printSuperheroes() {
         for superhero in superheroes {
-            print(superhero)
+            superhero.printSuperheroInfo()
         }
     }
 }
@@ -139,6 +140,8 @@ let spiderGwen = Spiderman(name: "Gwen Steffany",
                            superPowers: ["Web Shoot": 5, "Speed": 10])
 
 let superheroSquad = SuperheroSquad(superheroes: [peterParker, milesMorales, spiderGwen])
+print("Superheroes(🦸 🦸‍♀️):")
+superheroSquad.printSuperheroes()
 
 print("🔴Battle 1:")
 let superEnemy1 = SuperEnemy(name: "Green Goblin", hitPoint: 12)
